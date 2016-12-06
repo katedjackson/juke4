@@ -9,6 +9,7 @@ import Artist from './components/Artist';
 import Songs from './components/Songs';
 import NewPlaylistContainer from './containers/NewPlaylistContainer';
 import Playlist from './components/Playlist';
+import LyricsContainer from './containers/LyricsContainer';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route path="albums" component={Albums} />
         <Route path="songs" component={Songs} />
       </Route>
+      <Route path = "/lyrics" component = {LyricsContainer} />
       <Route path="/new-playlist" component={NewPlaylistContainer} />
       <Route path="playlists/:playlistId" component={Playlist} />
       <IndexRedirect to='/albums' />
