@@ -11,7 +11,7 @@ export default function reducer (prevState = initialState, action) {
   switch (action.type) {
     case SET_LYRICS:
       newState = Object.assign({}, prevState);
-      newState.text = action.lyric;
+      newState.text = action.text;
       break;
 
     default:
