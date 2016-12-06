@@ -28,9 +28,7 @@ export default function Lyrics (props) {
 			</div>
 			</form>
 		</div>
-
-		);
-
+	);
 }
 
 // export default Lyrics;
