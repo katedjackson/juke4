@@ -56,11 +56,7 @@ export default class AppContainer extends Component {
   }
 
   onLoad (albums, artists, playlists) {
-    this.setState({
-      albums: convertAlbums(albums),
-      artists: artists,
-      playlists: playlists
-    });
+     store.dispatch(onLoad(albums, artists, playlists))
   }
 
   play () {

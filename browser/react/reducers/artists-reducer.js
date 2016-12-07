@@ -1,6 +1,6 @@
 import {
-  RECIEVE_ARTISTS,
-  RECIEVE_ARTIST
+  RECEIVE_ARTISTS,
+  RECEIVE_ARTIST
 } from '../constants';
 
 export const initialPlayerState = {
@@ -14,11 +14,11 @@ export default function (state = initialPlayerState, action) {
 
   switch (action.type) {
 
-    case RECIEVE_ARTISTS:
+    case RECEIVE_ARTISTS:
       newState.artists = action.artists;
       break;
 
-    case RECIEVE_ARTIST:
+    case RECEIVE_ARTIST:
       newState.selectedArtist = action.selectedArtist;
       break;
 
