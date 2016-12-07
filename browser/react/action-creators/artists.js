@@ -1,13 +1,10 @@
 import {RECEIVE_ARTIST, RECEIVE_ARTISTS} from '../constants';
 import axios from 'axios';
-import AUDIO from '../audio';
-import { convertAlbum, convertAlbums, convertSong, skip } from '../utils';
-import {getState} from 'redux';
-
+import {convertAlbums, convertSong} from '../utils';
 
 export const selectArtist = function (artistId) {
 
-  return function(dispatch, getState){
+  return function(dispatch){
     Promise
       .all([
         axios.get(`/api/artists/${artistId}`),
@@ -19,7 +16,7 @@ export const selectArtist = function (artistId) {
     }
   }
 
- export const onLoadArtist (artist, albums, songs) {
+export const onLoadArtist (artist, albums, songs) {
 
   albums = convertAlbums(albums);
   songs = songs.map(convertSong);
@@ -30,20 +27,13 @@ export const selectArtist = function (artistId) {
     type: RECEIVE_ARTIST,
     selectedArtist: artist
 
-    }
-  
-    }
-    
   }
+}
 
-  export const onLoad = function(albums, artists, playlists) {
-    
-    albums: convertAlbums(albums),
-    artists: artists,
-    playlists: playlists
+export const onLoad = function(albums, artists, playlists) {
 
-    return {
-      type: RECEIVE_ARTISTS,
-      artists : artists
-    }
+  return {
+    type: RECEIVE_ARTISTS,
+    artists : artists
   }
+}
